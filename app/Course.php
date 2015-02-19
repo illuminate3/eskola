@@ -1,8 +1,20 @@
 <?php namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
+use App\Http\Requests;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Course extends Model {
+class Course extends Model implements SluggableInterface{
+
+	use SluggableTrait;
+
+	protected $sluggable = array(
+		'build_from' => 'title',
+		'save_to'    => 'slug',
+	);
 
 	protected $fillable = [
 		'title',
@@ -11,6 +23,17 @@ class Course extends Model {
 		'slug',
 		'excerpt'
 	];
+	protected $dates = ['published_at'];
+
+	public function scopePublished($query)
+	{
+		$query->where('published_at', '<=', Carbon::now());
+	}
+
+	public function setPublishedAtAttribute($date)
+	{
+		$this->attributes['published_at'] = Carbon::parse($date);
+	}
 
 	public function lessons()
 	{

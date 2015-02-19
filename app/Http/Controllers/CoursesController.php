@@ -4,10 +4,13 @@ use App\Course;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use Carbon\Carbon;
-use Illuminate\Support\Str;
-use Request;
+use App\Http\Requests\CourseRequest;
+use Illuminate\Http\Request;
 
+/**
+ * Class CoursesController
+ * @package App\Http\Controllers
+ */
 class CoursesController extends Controller {
 
 	/**
@@ -17,7 +20,7 @@ class CoursesController extends Controller {
 	 */
 	public function index()
 	{
-		$courses = Course::latest()->get();
+		$courses = Course::latest('published_at')->published()->get();
 		//return view('courses.index')->with('courses', $courses); =
 		return view('courses.index', compact('courses'));
 	}
@@ -35,14 +38,12 @@ class CoursesController extends Controller {
 	/**
 	 * Store a newly created resource in storage.
 	 *
+	 * @param CreateCourseRequest $request
 	 * @return Response
 	 */
-	public function store()
+	public function store(CourseRequest $request)
 	{
-		$input = Request::all();
-		$input['published_at'] = Carbon::now();
-		$input['slug'] = Str::slug(Request::get('title'));
-		Course::create($input);
+		Course::create($request->all());
 
 		return redirect('courses');
 	}
@@ -67,9 +68,10 @@ class CoursesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($slug)
 	{
-		//
+		$course = Course::where('slug', $slug)->first();
+		return view('courses.edit', compact('course'));
 	}
 
 	/**
@@ -78,9 +80,13 @@ class CoursesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($slug, CourseRequest $request)
 	{
-		//
+		$course = Course::where('slug', $slug)->first();
+
+		$course->update($request->all());
+
+		return redirect('courses');
 	}
 
 	/**

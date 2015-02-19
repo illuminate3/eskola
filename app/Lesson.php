@@ -1,5 +1,6 @@
 <?php namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Lesson extends Model {
@@ -12,6 +13,13 @@ class Lesson extends Model {
 		'slug',
 		'excerpt'
 	];
+
+	protected $dates = ['published_at'];
+
+	public function scopePublished($query)
+	{
+		$query->where('published_at', '<=', Carbon::now());
+	}
 
 	public function course()
 	{
