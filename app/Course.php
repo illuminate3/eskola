@@ -7,7 +7,7 @@ use App\Http\Requests;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Course extends Model implements SluggableInterface{
+class Course extends Model implements SluggableInterface {
 
 	use SluggableTrait;
 
@@ -33,6 +33,11 @@ class Course extends Model implements SluggableInterface{
 	public function setPublishedAtAttribute($date)
 	{
 		$this->attributes['published_at'] = Carbon::parse($date);
+	}
+
+	public function setSlugAttribute($slug)
+	{
+		$this->attributes['slug'] = Str::slug($slug);
 	}
 
 	public function lessons()

@@ -11,14 +11,19 @@
 
                     <div class="panel-body">
 
-                        {!! Form::open(['url' => 'courses']) !!}
+                        {!! Form::open(['url' => 'lessons']) !!}
+                        <!--- Course Form Input --->
+                        <div class="form-group">
+                            {!! Form::label('Course', 'Course:') !!}
+                            {!! Form::select('course_id', $courses, null, ['class' => 'form-control']) !!}
+                        </div>
                             <div class="form-group">
-                                {!! Form::label('title', 'Title:') !!}
+                                {!! Form::label('title', 'Lesson title:') !!}
                                 {!! Form::text('title', null, ['class' => 'form-control']) !!}
                             </div>
                             <!--- Body Form Inout Field --->
                             <div class="form-group">
-                                {!! Form::label('body', 'Description:') !!}
+                                {!! Form::label('body', 'Lesson:') !!}
                                 {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
                             </div>
                             <!--- Published_at Form Input HIDDEN--->
@@ -27,7 +32,7 @@
                             </div>
                             <!--- Submit Course Field --->
                             <div class="form-group">
-                                {!! Form::submit('Add new course to Course list', ['class' => 'btn btn-primary']) !!}
+                                {!! Form::submit('Add new lesson to this course', ['class' => 'btn btn-primary']) !!}
                             </div>
                             {!! Form::close() !!}
                         @include('errors.list')

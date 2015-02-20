@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Course;
+use App\Http\Requests\LessonRequest;
 use App\Lesson;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -27,7 +29,9 @@ class LessonsController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		$courses = Course::lists('title', 'id');
+
+		return view('lessons.create', compact('courses'));
 	}
 
 	/**
@@ -35,20 +39,25 @@ class LessonsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(LessonRequest $request)
 	{
-		//
+		Lesson::create($request->all());
+
+		return redirect('lessons');
 	}
 
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param $slug
 	 * @return Response
+	 * @internal param int $id
 	 */
-	public function show($id)
+	public function show($slug)
 	{
-		//
+		$lesson = Lesson::where('slug', $slug)->first();
+
+		return view('lessons.show', compact('lesson'));
 	}
 
 	/**
@@ -59,7 +68,9 @@ class LessonsController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$lesson = Lesson::findOrFail($id);
+		$courses = Course::lists('title', 'id');
+		return view('lessons.edit', compact('lesson', 'courses'));
 	}
 
 	/**
@@ -68,9 +79,12 @@ class LessonsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id, LessonRequest $request)
 	{
-		//
+		$lesson = Lesson::findOrFail($id);
+		$lesson->update($request->all());
+
+		return redirect('lessons');
 	}
 
 	/**

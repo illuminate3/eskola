@@ -11,7 +11,18 @@
 
                     <div class="panel-body">
                         <article>
-                            <div class="body">{{ $course->body }}</div>
+                            <div class="body">{{ $course->body }}
+                                @foreach($course->lessons as $lesson)
+                                    <article>
+                                        <h3>
+                                            <a href="{{ action('LessonsController@show', [$lesson->slug]) }}"> {{ $lesson->title }}</a>
+                                        </h3>
+                                        <li class="body">{{ $lesson->body }}</li>
+                                    </article>
+                                    </hr>
+                                @endforeach
+                            </div>
+
                         </article>
                     </div>
                 </div>

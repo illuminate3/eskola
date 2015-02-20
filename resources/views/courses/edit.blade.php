@@ -11,7 +11,7 @@
 
                     <div class="panel-body">
 
-                        {!! Form::model($course, ['method' => 'PATCH', 'action' => ['CoursesController@update', $course->slug]]) !!}
+                        {!! Form::model($course, ['method' => 'PATCH', 'action' => ['CoursesController@update', $course->id]]) !!}
                         <div class="form-group">
                             {!! Form::label('title', 'Title:') !!}
                             {!! Form::text('title', null, ['class' => 'form-control']) !!}

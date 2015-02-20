@@ -68,9 +68,9 @@ class CoursesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($slug)
+	public function edit($id)
 	{
-		$course = Course::where('slug', $slug)->first();
+		$course = Course::findOrFail($id);
 		return view('courses.edit', compact('course'));
 	}
 
@@ -80,9 +80,9 @@ class CoursesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($slug, CourseRequest $request)
+	public function update($id, CourseRequest $request)
 	{
-		$course = Course::where('slug', $slug)->first();
+		$course = Course::findOrFail($id);
 
 		$course->update($request->all());
 

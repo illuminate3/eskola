@@ -16,7 +16,7 @@ class CreateLessonsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('course_id')->unsigned();
-			$table->string('slug');
+			$table->string('slug')->unique();
 			$table->string('title');			
 			$table->text('body')->nullable();
 			$table->text('excerpt')->nullable();

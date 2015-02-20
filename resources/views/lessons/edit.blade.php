@@ -6,12 +6,17 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h1>Edit: {!! $course->title !!}</h1>
+                        <h1>Edit: {!! $lesson->title !!}</h1>
                     </div>
 
                     <div class="panel-body">
 
-                        {!! Form::model($course, ['method' => 'PATCH', 'action' => ['CoursesController@update', $course->slug]]) !!}
+                        {!! Form::model($lesson, ['method' => 'PATCH', 'action' => ['LessonsController@update', $lesson->id]]) !!}
+                        <!--- Course Form Input --->
+                        <div class="form-group">
+                            {!! Form::label('Course', 'Course:') !!}
+                            {!! Form::select('course_id', $courses, null, ['class' => 'form-control']) !!}
+                        </div>
                         <div class="form-group">
                             {!! Form::label('title', 'Title:') !!}
                             {!! Form::text('title', null, ['class' => 'form-control']) !!}
