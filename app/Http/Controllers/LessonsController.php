@@ -1,8 +1,10 @@
 <?php namespace App\Http\Controllers;
 
 use App\Course;
-use App\Http\Requests\LessonRequest;
 use App\Lesson;
+use App\Test;
+use App\Http\Requests\LessonRequest;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -96,6 +98,13 @@ class LessonsController extends Controller {
 	public function destroy($id)
 	{
 		//
+	}
+
+	public function showLessonTest()
+	{
+		$test = Lesson::find(1)->test;
+		$lesson = Lesson::find(1);
+		return 'this is lesson with ID of'. $lesson->id . '  and this is that test title:' .$test->title;
 	}
 
 }

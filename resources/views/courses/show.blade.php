@@ -16,10 +16,9 @@
                     <div class="col-md-4 banner__courses-learning-points">
                         <h5>You Will Study About...</h5>
                         <ul>
-                            <li>Building an app from scratch
-                            </li><li>The fundamentals of Laravel
-
-                            </li></ul>
+                            <li>{{ $course->excerpt }}</li>
+                            <li>{{ $course->excerpt }} </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -40,7 +39,7 @@
                             </td>
 
                             <td class="lesson-length">
-                                {{ $lesson->body }}
+                                {{ $lesson->excerpt }}
                             </td>
                             <td class="lesson-status">
                                 <span href="#" class="fa fa-lock" data-toggle="tooltip" data-placement="top" title="Get access to this course">
