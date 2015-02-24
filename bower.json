@@ -1,0 +1,8 @@
+{
+  "name": "Laravel Application",
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.1",
+    "font-awesome": "~4.3.0",
+    "sass-bootstrap-glyphicons": "~1.0.0"
+  }
+}

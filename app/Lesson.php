@@ -42,5 +42,10 @@ class Lesson extends Model implements SluggableInterface {
 		return $this->belongsTo('App\Course');
 	}
 
+	public function test()
+	{
+		return $this->hasOne('App\Test');
+	}
+
 
 }

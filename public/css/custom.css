@@ -1,0 +1,52 @@
+.list-group-item > .label {
+    float: right;
+}
+.list-group > .list-group-items {
+    font-size: 24px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+li.list-group-item > span.label-as-badge {
+    float: right;
+    font-size: 10px;
+    font-weight: bold;
+    padding-top: 4px;
+    margin-top: 2px;
+}
+
+li.list-group-item:hover, li.list-group-item:focus {
+    text-decoration: none;
+    color: #555555;
+    background-color: #f4f4f4;
+}
+
+
+a:hover, a:focus {
+
+    text-decoration: none;
+}
+
+
+.lesson-outline .lesson-wrap.active td, .lesson-outline .lesson-wrap:hover td,  td.lesson-title > a:hover {
+    color: #fff;
+
+}
+
+.lesson-outline .lesson-wrap td {
+    padding: 20px;
+    vertical-align: middle;
+    font-size: 15px;
+}
+td.lesson-index, td.lesson-status, td.lesson-watch-later {
+    text-align: center;
+}
+
+td.lesson-wrap:hover > td.lesson-title > a{
+    color: white;
+}
+tr:hover a {
+    color: #fff;
+}

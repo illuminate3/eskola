@@ -6,12 +6,16 @@ use App\Http\Controllers\Controller;
 
 use App\Http\Requests\CourseRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-/**
- * Class CoursesController
- * @package App\Http\Controllers
- */
+
 class CoursesController extends Controller {
+
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+
 
 	/**
 	 * Display a listing of the resource.
@@ -21,8 +25,9 @@ class CoursesController extends Controller {
 	public function index()
 	{
 		$courses = Course::latest('published_at')->published()->get();
+		$user = Auth::user();
 		//return view('courses.index')->with('courses', $courses); =
-		return view('courses.index', compact('courses'));
+		return view('courses.index', compact('courses', 'user'));
 	}
 
 	/**
@@ -44,6 +49,8 @@ class CoursesController extends Controller {
 	public function store(CourseRequest $request)
 	{
 		Course::create($request->all());
+
+		flash()->success('Your course has been created!');
 
 		return redirect('courses');
 	}
@@ -71,6 +78,7 @@ class CoursesController extends Controller {
 	public function edit($id)
 	{
 		$course = Course::findOrFail($id);
+
 		return view('courses.edit', compact('course'));
 	}
 
@@ -85,8 +93,8 @@ class CoursesController extends Controller {
 		$course = Course::findOrFail($id);
 
 		$course->update($request->all());
-
-		return redirect('courses');
+		flash()->success('"' . $course->title . '" has been edited successfully!');
+		return redirect( action('CoursesController@show', [$course->slug]) );
 	}
 
 	/**

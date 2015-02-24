@@ -43,6 +43,13 @@
 						</div>
 
 						<div class="form-group">
+							<label class="col-md-4 control-label">Phone number</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="phone" value="{{ old('phone') }}">
+							</div>
+						</div>
+
+						<div class="form-group">
 							<label class="col-md-4 control-label">Password</label>
 							<div class="col-md-6">
 								<input type="password" class="form-control" name="password">

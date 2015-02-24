@@ -6,7 +6,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h1>Create new Course</h1>
+                        <h1>Create new Lesson</h1>
                     </div>
 
                     <div class="panel-body">
@@ -14,16 +14,21 @@
                         {!! Form::open(['url' => 'lessons']) !!}
                         <!--- Course Form Input --->
                         <div class="form-group">
-                            {!! Form::label('Course', 'Course:') !!}
+                            {!! Form::label('Course', 'Course:*') !!}
                             {!! Form::select('course_id', $courses, null, ['class' => 'form-control']) !!}
                         </div>
                             <div class="form-group">
-                                {!! Form::label('title', 'Lesson title:') !!}
+                                {!! Form::label('title', 'Lesson title:*') !!}
                                 {!! Form::text('title', null, ['class' => 'form-control']) !!}
+                            </div>
+                            <!--- Excerpt Form Inout Field --->
+                            <div class="form-group">
+                                {!! Form::label('body', 'Small description:') !!}
+                                {!! Form::text('excerpt', null, ['class' => 'form-control']) !!}
                             </div>
                             <!--- Body Form Inout Field --->
                             <div class="form-group">
-                                {!! Form::label('body', 'Lesson:') !!}
+                                {!! Form::label('body', 'Lesson:*') !!}
                                 {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
                             </div>
                             <!--- Published_at Form Input HIDDEN--->

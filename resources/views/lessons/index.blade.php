@@ -13,8 +13,9 @@
                                 <h2>
                                     <a href="{{ action('LessonsController@show', [$lesson->slug]) }}"> {{ $lesson->title }}</a>
                                 </h2>
-                                <div class="body">{{ $lesson->body }}</div>
+                                <div class="body">{!! $lesson->body !!}</div>
                                 <div class="body">{{ $lesson->course_id }}</div>
+                                <div class="body">{{ $lesson->excerpt }}</div>
                                 <div class="body">{{ $lesson->slug }}</div>
                                 <div class="body">{{ $lesson->id }}</div>
 

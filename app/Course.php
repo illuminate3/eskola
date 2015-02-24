@@ -6,15 +6,18 @@ use Illuminate\Support\Str;
 use App\Http\Requests;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
+use Laracasts\Presenter\PresentableTrait;
 
 class Course extends Model implements SluggableInterface {
 
-	use SluggableTrait;
+	use SluggableTrait, PresentableTrait;
 
 	protected $sluggable = array(
 		'build_from' => 'title',
 		'save_to'    => 'slug',
 	);
+
+	protected $presenter = 'App\Presenters\CoursePresenter';
 
 	protected $fillable = [
 		'title',
@@ -43,6 +46,15 @@ class Course extends Model implements SluggableInterface {
 	public function lessons()
 	{
 		return $this->hasMany('App\Lesson');
+	}
+	public function courses()
+	{
+		return $this->belongsToMany('App\Courses', 'user_courses', 'user_id', 'course_id');
+	}
+
+	public function tests()
+	{
+		return $this->hasManyThrough('App\Test', 'Lesson');
 	}
 
 }
