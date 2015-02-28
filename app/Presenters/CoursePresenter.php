@@ -20,16 +20,30 @@ class CoursePresenter extends Presenter {
     /**
      * @return mixed
      */
-    public function accountAge()
+    public function courseAge()
     {
     return $this->created_at->diffForHumans();
     }
 
+    /**
+     * @return string
+     */
     public function lessonsCount()
     {
         $count = $this->entity->lessons()->count();
         $plural = str_plural('Lesson', $count);
         return "{$count} {$plural}";
     }
+
+    /**
+     * Returns created_at in different format
+     *
+     * @return string
+     */
+    public function createdAt()
+    {
+        return $this->created_at->toFormattedDateString();
+    }
+
 
 }

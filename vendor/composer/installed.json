@@ -986,78 +986,6 @@
         ]
     },
     {
-        "name": "psy/psysh",
-        "version": "v0.3.5",
-        "version_normalized": "0.3.5.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/bobthecow/psysh.git",
-            "reference": "2ce0e8f3020fd292c2ad2a496c5d83939823f642"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/bobthecow/psysh/zipball/2ce0e8f3020fd292c2ad2a496c5d83939823f642",
-            "reference": "2ce0e8f3020fd292c2ad2a496c5d83939823f642",
-            "shasum": ""
-        },
-        "require": {
-            "dnoegel/php-xdg-base-dir": "0.1",
-            "jakub-onderka/php-console-highlighter": "0.3.*",
-            "nikic/php-parser": "~1.0",
-            "php": ">=5.3.0",
-            "symfony/console": "~2.3.10|~2.4.2|~2.5"
-        },
-        "require-dev": {
-            "fabpot/php-cs-fixer": "~1.3",
-            "phpunit/phpunit": "~3.7|~4.0",
-            "squizlabs/php_codesniffer": "~2.0",
-            "symfony/finder": "~2.1"
-        },
-        "suggest": {
-            "ext-pcntl": "Enabling the PCNTL extension makes PsySH a lot happier :)",
-            "ext-posix": "If you have PCNTL, you'll want the POSIX extension as well.",
-            "ext-readline": "Enables support for arrow-key history navigation, and showing and manipulating command history."
-        },
-        "time": "2015-02-12 19:35:52",
-        "bin": [
-            "bin/psysh"
-        ],
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-develop": "0.3.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "src/Psy/functions.php"
-            ],
-            "psr-0": {
-                "Psy\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Justin Hileman",
-                "email": "justin@justinhileman.info",
-                "homepage": "http://justinhileman.com"
-            }
-        ],
-        "description": "An interactive shell for modern PHP.",
-        "homepage": "http://psysh.org",
-        "keywords": [
-            "REPL",
-            "console",
-            "interactive",
-            "shell"
-        ]
-    },
-    {
         "name": "nesbot/carbon",
         "version": "1.14.0",
         "version_normalized": "1.14.0.0",
@@ -3275,58 +3203,6 @@
         ]
     },
     {
-        "name": "cviebrock/eloquent-sluggable",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/cviebrock/eloquent-sluggable.git",
-            "reference": "4f04409e06badcc24b39b863a73937dd23156ec1"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/4f04409e06badcc24b39b863a73937dd23156ec1",
-            "reference": "4f04409e06badcc24b39b863a73937dd23156ec1",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/config": "5.*",
-            "illuminate/database": "5.*",
-            "illuminate/support": "5.*",
-            "php": ">=5.4.0",
-            "predis/predis": "~1.0"
-        },
-        "require-dev": {
-            "orchestra/testbench": "3.0.*",
-            "phpunit/phpunit": "4.*"
-        },
-        "time": "2015-02-11 20:14:35",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Cviebrock\\EloquentSluggable\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Colin Viebrock",
-                "email": "colin@viebrock.ca"
-            }
-        ],
-        "description": "Easy creation of slugs for your Eloquent models in Laravel",
-        "homepage": "https://github.com/cviebrock/eloquent-sluggable",
-        "keywords": [
-            "eloquent",
-            "laravel",
-            "slug"
-        ]
-    },
-    {
         "name": "laracasts/presenter",
         "version": "0.2.1",
         "version_normalized": "0.2.1.0",
@@ -3420,18 +3296,139 @@
         "description": "Easy flash notifications"
     },
     {
-        "name": "laravel/framework",
-        "version": "v5.0.6",
-        "version_normalized": "5.0.6.0",
+        "name": "way/generators",
+        "version": "3.0.3",
+        "version_normalized": "3.0.3.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/laravel/framework.git",
-            "reference": "43637b796f1ac0b1a960984231251ff04b438006"
+            "url": "https://github.com/JeffreyWay/Laravel-4-Generators.git",
+            "reference": "4a215769643507326192a739058a0c7105d932b5"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/laravel/framework/zipball/43637b796f1ac0b1a960984231251ff04b438006",
-            "reference": "43637b796f1ac0b1a960984231251ff04b438006",
+            "url": "https://api.github.com/repos/JeffreyWay/Laravel-4-Generators/zipball/4a215769643507326192a739058a0c7105d932b5",
+            "reference": "4a215769643507326192a739058a0c7105d932b5",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "~5.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "behat/behat": "~2.5.1",
+            "behat/mink": "~1.5.0",
+            "behat/mink-extension": "~1.2.0",
+            "behat/mink-goutte-driver": "~1.0.9",
+            "behat/mink-selenium2-driver": "~1.1.1",
+            "phpspec/phpspec": "~2.0",
+            "phpunit/phpunit": "~3.7"
+        },
+        "time": "2014-10-01 04:00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Way\\Generators": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jeffrey Way",
+                "email": "jeffrey@jeffrey-way.com"
+            }
+        ],
+        "description": "Rapidly generate resources, migrations, models, and much more."
+    },
+    {
+        "name": "psy/psysh",
+        "version": "v0.4.1",
+        "version_normalized": "0.4.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/bobthecow/psysh.git",
+            "reference": "3787f3436f4fd898e0ac1eb6f5abd2ab6b24085b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/bobthecow/psysh/zipball/3787f3436f4fd898e0ac1eb6f5abd2ab6b24085b",
+            "reference": "3787f3436f4fd898e0ac1eb6f5abd2ab6b24085b",
+            "shasum": ""
+        },
+        "require": {
+            "dnoegel/php-xdg-base-dir": "0.1",
+            "jakub-onderka/php-console-highlighter": "0.3.*",
+            "nikic/php-parser": "~1.0",
+            "php": ">=5.3.0",
+            "symfony/console": "~2.3.10|~2.4.2|~2.5"
+        },
+        "require-dev": {
+            "fabpot/php-cs-fixer": "~1.3",
+            "phpunit/phpunit": "~3.7|~4.0",
+            "squizlabs/php_codesniffer": "~2.0",
+            "symfony/finder": "~2.1"
+        },
+        "suggest": {
+            "ext-pcntl": "Enabling the PCNTL extension makes PsySH a lot happier :)",
+            "ext-pdo-sqlite": "The doc command requires SQLite to work.",
+            "ext-posix": "If you have PCNTL, you'll want the POSIX extension as well.",
+            "ext-readline": "Enables support for arrow-key history navigation, and showing and manipulating command history."
+        },
+        "time": "2015-02-25 20:35:54",
+        "bin": [
+            "bin/psysh"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-develop": "0.3.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/Psy/functions.php"
+            ],
+            "psr-0": {
+                "Psy\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Justin Hileman",
+                "email": "justin@justinhileman.info",
+                "homepage": "http://justinhileman.com"
+            }
+        ],
+        "description": "An interactive shell for modern PHP.",
+        "homepage": "http://psysh.org",
+        "keywords": [
+            "REPL",
+            "console",
+            "interactive",
+            "shell"
+        ]
+    },
+    {
+        "name": "laravel/framework",
+        "version": "v5.0.13",
+        "version_normalized": "5.0.13.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/laravel/framework.git",
+            "reference": "c263240daa383e6b9bd979600dc61dcb2c436d53"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/laravel/framework/zipball/c263240daa383e6b9bd979600dc61dcb2c436d53",
+            "reference": "c263240daa383e6b9bd979600dc61dcb2c436d53",
             "shasum": ""
         },
         "require": {
@@ -3448,7 +3445,7 @@
             "mtdowling/cron-expression": "~1.0",
             "nesbot/carbon": "~1.0",
             "php": ">=5.4.0",
-            "psy/psysh": "0.3.*",
+            "psy/psysh": "0.4.*",
             "swiftmailer/swiftmailer": "~5.1",
             "symfony/console": "2.6.*",
             "symfony/debug": "2.6.*",
@@ -3510,7 +3507,7 @@
             "pda/pheanstalk": "Required to use the beanstalk queue driver (~3.0).",
             "predis/predis": "Required to use the redis cache and queue drivers (~1.0)."
         },
-        "time": "2015-02-20 16:22:21",
+        "time": "2015-02-27 00:32:38",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3547,39 +3544,31 @@
         ]
     },
     {
-        "name": "way/generators",
-        "version": "3.0.3",
-        "version_normalized": "3.0.3.0",
+        "name": "kodeine/laravel-acl",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/JeffreyWay/Laravel-4-Generators.git",
-            "reference": "4a215769643507326192a739058a0c7105d932b5"
+            "url": "https://github.com/kodeine/laravel-acl.git",
+            "reference": "07bb7ada2617aa5b425faf3c78a437d2e7208004"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/JeffreyWay/Laravel-4-Generators/zipball/4a215769643507326192a739058a0c7105d932b5",
-            "reference": "4a215769643507326192a739058a0c7105d932b5",
+            "url": "https://api.github.com/repos/kodeine/laravel-acl/zipball/07bb7ada2617aa5b425faf3c78a437d2e7208004",
+            "reference": "07bb7ada2617aa5b425faf3c78a437d2e7208004",
             "shasum": ""
         },
         "require": {
-            "illuminate/support": "~5.0",
+            "illuminate/support": "4.2.x|~5.0",
             "php": ">=5.4.0"
         },
-        "require-dev": {
-            "behat/behat": "~2.5.1",
-            "behat/mink": "~1.5.0",
-            "behat/mink-extension": "~1.2.0",
-            "behat/mink-goutte-driver": "~1.0.9",
-            "behat/mink-selenium2-driver": "~1.1.1",
-            "phpspec/phpspec": "~2.0",
-            "phpunit/phpunit": "~3.7"
-        },
-        "time": "2014-10-01 04:00:00",
+        "time": "2015-02-26 03:47:01",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
+            "classmap": [],
             "psr-0": {
-                "Way\\Generators": "src/"
+                "Kodeine\\Acl\\": "src/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -3588,10 +3577,73 @@
         ],
         "authors": [
             {
-                "name": "Jeffrey Way",
-                "email": "jeffrey@jeffrey-way.com"
+                "name": "Ahsen M.",
+                "homepage": "https://github.com/kodeine",
+                "role": "Developer"
             }
         ],
-        "description": "Rapidly generate resources, migrations, models, and much more."
+        "description": "Light-weight role-based permissions for Laravel 5 built in Auth system.",
+        "keywords": [
+            "acl",
+            "auth",
+            "eloquent",
+            "kodeine",
+            "laravel",
+            "permissions",
+            "roles",
+            "security"
+        ]
+    },
+    {
+        "name": "cviebrock/eloquent-sluggable",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/cviebrock/eloquent-sluggable.git",
+            "reference": "dc388ddd5f746db83a53d702093e38d38170df1d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/dc388ddd5f746db83a53d702093e38d38170df1d",
+            "reference": "dc388ddd5f746db83a53d702093e38d38170df1d",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/config": "5.*",
+            "illuminate/database": "5.*",
+            "illuminate/support": "5.*",
+            "php": ">=5.4.0",
+            "predis/predis": "~1.0"
+        },
+        "require-dev": {
+            "orchestra/testbench": "3.0.*",
+            "phpunit/phpunit": "4.*"
+        },
+        "time": "2015-02-22 21:30:35",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Cviebrock\\EloquentSluggable\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Colin Viebrock",
+                "email": "colin@viebrock.ca"
+            }
+        ],
+        "description": "Easy creation of slugs for your Eloquent models in Laravel",
+        "homepage": "https://github.com/cviebrock/eloquent-sluggable",
+        "keywords": [
+            "eloquent",
+            "laravel",
+            "slug"
+        ]
     }
 ]

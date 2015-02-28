@@ -1,26 +1,77 @@
 @extends('app')
 
 @section('content')
-    <div class="container">
-        <div class="row">
+    <div class="jumbotron">
+        <div class="container">
+            <h2 class="jumbotron__heading info">Courses</h2>
 
-            <div class="col-md-10 col-md-offset-1">
+            <h4 class="jumbotron__sub-heading">Think of a series as a step-by-step, deep-dive into some aspect of discipleship.</h4>
 
-                <div class="panel panel-default">
-                    <!-- Default panel contents -->
-                    <div class="panel-heading"><h3>Courses</h3></div>
-
-                    <!-- List group -->
-                    <ul class="list-group">
-                        @foreach($courses as $course)
-                            <div class="list-group-items">
-                                    <li class="list-group-item"><a href="{{ action('CoursesController@show', [$course->slug]) }}" data-toggle="tooltip" data-placement="left" title="Open Course" >{{ $course->title }} </a>  <span href="#" class="fa fa-lock" data-toggle="tooltip" data-placement="top" title="Get access to this course"><a href="#"></a> </span>  <span class="label label-info label-as-badge">{{ $course->present()->lessonsCount }}</span></li>
-                            </div>
-                        @endforeach
-                    </ul>
-                </div>
-
-            </div>
         </div>
+    </div>
+    <div class="container">
+    @foreach($courses->chunk(3) as $items)
+        <div class="row course-set courses__row">
+            @foreach($items as $course)
+                <article class="col-md-4 course-block course-block-series course-{{ $course->id }}">
+
+                    <div class="full-center course-block-inner"
+                         style="background: -webkit-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(http://lorempixel.com/360/225/people/{{ $course->id }}/); background: linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(http://lorempixel.com/360/225/people/{{ $course->id }}/); background-size: cover;">
+
+                        <div class="course-block-thumbnail">
+                            <i class="course-thumbnail fa fa-lock"></i>
+                        </div>
+
+                        <h5 class="course-block-difficulty">
+                            beginner
+                        </h5>
+
+                        <h3 class="course-block-title  not-watched">
+
+                            <a href="{{ action('CoursesController@show', [$course->slug]) }}" title="{{ $course->title }}">{{ $course->title }}</a>
+                        </h3>
+
+                        <small class="course-block-length">
+                            <span class="label label-info label-as-badge">{{ $course->present()->coursesCount }}</span>
+                        </small>
+                    </div>
+
+                    <div class="course-block-meta">
+                        <div class="course-date">
+                            {{ $course->present()->createdAt }}
+                        </div>
+
+
+                        <div class="course-watch-later course-meta-item">
+                            <form method="POST" action="https://laracasts.com/courses/11/save" accept-charset="UTF-8"
+                                  id="watch-later-11"><input name="_token" type="hidden"
+                                                             value="DZre7aGUOk9jKWPcd2cjjAkYUagF3xnGzKwl9LJW">
+                                <input name="type" type="hidden" value="Laracasts\Series">
+                                <button type="submit" class="course-watch-later-button tt naked-btn icon-clock-2-1" title=""
+                                        data-delay="500" data-original-title="Watch Later">
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- This displays the favorited form and heart icon thing -->
+                        <div class="course-favorite">
+                            <form method="POST" action="https://laracasts.com/courses/11/favorite" accept-charset="UTF-8"
+                                  class="favorite-form"><input name="_token" type="hidden"
+                                                               value="DZre7aGUOk9jKWPcd2cjjAkYUagF3xnGzKwl9LJW">
+                                <input name="course_type" type="hidden" value="series">
+                                <button type="submit" class="icon-heart-1-1 not-favorite naked-btn tt" title="" data-delay="500"
+                                        data-original-title="Favorite course">
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="course-block-excerpt">
+                        <p>{{ $course->excerpt }}</p>
+                    </div>
+                </article>
+            @endforeach
+        </div>
+    @endforeach
     </div>
 @endsection

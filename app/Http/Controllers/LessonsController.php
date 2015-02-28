@@ -58,8 +58,8 @@ class LessonsController extends Controller {
 	public function show($slug)
 	{
 		$lesson = Lesson::where('slug', $slug)->first();
-
-		return view('lessons.show', compact('lesson'));
+        $course = Course::findOrFail($lesson->course_id);
+		return view('lessons.show', compact('lesson', 'course'));
 	}
 
 	/**

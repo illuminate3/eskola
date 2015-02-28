@@ -28,10 +28,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		'unique'     => true,
 	);
 
-	public function get_fullname() {
-		return $this->name . ' ' . $this->surename;
-	}
-
 	/**
 	 * The database table used by the model.
 	 *

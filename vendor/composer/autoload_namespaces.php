@@ -27,6 +27,7 @@ return array(
     'PhpSpec' => array($vendorDir . '/phpspec/phpspec/src'),
     'Laracasts\\Presenter' => array($vendorDir . '/laracasts/presenter/src'),
     'Laracasts\\Flash' => array($vendorDir . '/laracasts/flash/src'),
+    'Kodeine\\Acl\\' => array($vendorDir . '/kodeine/laravel-acl/src'),
     'JakubOnderka\\PhpConsoleHighlighter' => array($vendorDir . '/jakub-onderka/php-console-highlighter/src'),
     'JakubOnderka\\PhpConsoleColor' => array($vendorDir . '/jakub-onderka/php-console-color/src'),
     'Dotenv' => array($vendorDir . '/vlucas/phpdotenv/src'),

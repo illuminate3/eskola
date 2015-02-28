@@ -21,7 +21,7 @@ class Test extends Model implements SluggableInterface {
 
     protected $fillable = ['title', 'body', 'slug', 'published_at'];
 
-    public function leson()
+    public function lesson()
     {
         return $this->belongsTo('App\Lesson');
     }

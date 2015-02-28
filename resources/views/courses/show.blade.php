@@ -1,29 +1,27 @@
 @extends('app')
 
 @section('content')
-    <div class="container">
-        <div class="row">
+    <div class="banner banner__series">
+        <div class="container">
+            <div class="col-md-8 zeroed">
+                <h1 class="series-title wow flipInX animated" style="visibility: visible;">{{ $course->title }}</h1>
+                <div class="body wow fadeInUp animated" style="visibility: visible;">
+                    <p>{{$course->body}}</p>
 
-            <div class="banner banner__courses">
-                <div class="container">
-                    <div class="col-md-8 zeroed">
-                        <h1 class="courses-title wow flipInX animated" style="visibility: visible;">{{ $course->title }}</h1>
-                        <div class="body wow fadeInUp animated" style="visibility: visible;">
-                            <p></p><p>{{ $course->body }}</p><p></p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 banner__courses-learning-points">
-                        <h5>You Will Study About...</h5>
-                        <ul>
-                            <li>{{ $course->excerpt }}</li>
-                            <li>{{ $course->excerpt }} </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
 
-
+            <div class="col-md-4 banner__series-learning-points">
+                <h5>You Will Study About...</h5>
+                <ul>
+                    <li>{{ $course->excerpt }}</li>
+                    <li>{{ $course->excerpt }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
             <div class="lesson-outline-wrap">
                 <div class="container wrap--video">
                     <table class="lesson-outline table table-bordered table-hover lesson-outline-striped">

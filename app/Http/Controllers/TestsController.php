@@ -16,9 +16,9 @@ class TestsController extends Controller {
 	 */
 	public function index()
 	{
-		$lesson = Lesson::find(1);
+		$lesson = Lesson::all();
 
-		$tests = $lesson->test;
+		$tests = Test::all();
 		//return view('tests.index')->with('Tests', $Tests); =
 		return view('tests.index', compact('tests', 'lesson'));
 	}
