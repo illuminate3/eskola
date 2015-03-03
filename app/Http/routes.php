@@ -1,7 +1,7 @@
 <?php
 Event::listen('illuminate.query', function($query)
 {
-var_dump($query);
+//var_dump($query);
 });
 
 Route::get('dashboard', 'PagesController@dashboard');
@@ -18,8 +18,8 @@ Route::get('courses/create', [
  ]);
 
 Route::post('courses', 'CoursesController@store');
-Route::get('courses/{course_id}/edit', 'CoursesController@edit');
-Route::patch('courses/{course_id}/update', 'CoursesController@update');
+Route::get('course/{id}/edit', 'CoursesController@edit');
+Route::patch('course/{id}/update', 'CoursesController@update');
 
 Route::get('lessons', 'LessonsController@index');
 Route::get('lessons/create', 'LessonsController@create');
@@ -56,9 +56,7 @@ Route::get('course/{course_slug}/lesson/{lesson_slug}', ['as' => 'course.lesson.
 
 
     //Returns all lessons for specific course!
-Route::get('1', function()
+Route::get('text', function()
 {
-    $course = \App\Course::find(2);
-
-    return $course->test;
+    return View::make('text');
 });

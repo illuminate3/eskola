@@ -22,8 +22,8 @@ class CourseRequest extends Request {
 	public function rules()
 	{
 		return [
-			'title' => 'required|min:3',
-			'published_at' => 'required|date'
+			'course_title' => 'required|min:3',
+			'course_published_at' => 'required|date'
 		];
 	}
 

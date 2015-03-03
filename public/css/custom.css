@@ -378,7 +378,7 @@ padding: 3em 0;
 }
 
 .banner .body p {
-    font-size: 2em;
+    font-size: 1.2em;
     color: #fff;
     line-height: 1.4em;
     margin-right: 5em;
@@ -457,6 +457,10 @@ padding: 3em 0;
 }
 body > div.banner-lessons.banner__series > div > div > div > p {
     color: #ffffff;
+}
+
+td.lesson-status span.fa {
+font-size: 20px!important;
 }
 
 /* Animations */

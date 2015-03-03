@@ -20,11 +20,11 @@
                                 {!! Form::label('course_excerpt', 'Short description:') !!}
                                 {!! Form::text('course_excerpt', null, ['class' => 'form-control']) !!}
                             </div>
-                            {{--<!--- Body Form Inout Field --->--}}
-                            {{--<div class="form-group">--}}
-                                {{--{!! Form::label('course_body', 'Description:') !!}--}}
-                                {{--{!! Form::textarea('course_body', null, ['class' => 'form-control']) !!}--}}
-                            {{--</div>--}}
+                            <!--- Body Form Inout Field --->
+                           <div class="form-group">
+                                {!! Form::label('course_body', 'Description:') !!}
+                                {!! Form::textarea('course_body', null, ['class' => 'form-control']) !!}
+                            </div>
                             <!--- Published_at Form Input HIDDEN--->
                             <div class="form-group">
                                 {!! Form::input('date', 'course_published_at', date('Y-m-d'), ['class' => 'form-control']) !!}

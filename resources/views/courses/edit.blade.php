@@ -11,7 +11,7 @@
 
                     <div class="panel-body">
 
-                        {!! Form::model($course, ['method' => 'PATCH', 'action' => ['CoursesController@update', $course->course_id]]) !!}
+                        {!! Form::model($course, ['method' => 'PATCH', 'action' => ['CoursesController@update', $course->id]]) !!}
                         <div class="form-group">
                             {!! Form::label('course_title', 'Title:') !!}
                             {!! Form::text('course_title', null, ['class' => 'form-control']) !!}
@@ -25,6 +25,10 @@
                         <div class="form-group">
                             {!! Form::label('course_body', 'Description:') !!}
                             {!! Form::textarea('course_body', null, ['class' => 'form-control']) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('course_excerpt', 'Short description:') !!}
+                            {!! Form::text('course_excerpt', null, ['class' => 'form-control']) !!}
                         </div>
                         <!--- Published_at Form Input HIDDEN--->
                         <div class="form-group">

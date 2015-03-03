@@ -15,7 +15,6 @@
                 <h5>You Will Study About...</h5>
                 <ul>
                     <li>{{ $course->course_excerpt }}</li>
-                    <li>{{ $course->course_excerpt }}</li>
                 </ul>
             </div>
         </div>
