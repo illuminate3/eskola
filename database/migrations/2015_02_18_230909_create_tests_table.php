@@ -16,11 +16,11 @@ class CreateTestsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('lesson_id')->unsigned();
-			$table->string('slug')->unique();
-			$table->string('title');
-			$table->text('body')->nullable();
+			$table->string('test_slug')->unique();
+			$table->string('test_title');
+			$table->text('test_body')->nullable();
 			$table->timestamps();
-			$table->timestamp('published_at');
+			$table->timestamp('test_published_at');
 
 			$table->foreign('lesson_id')
 				->references('id')

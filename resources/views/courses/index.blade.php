@@ -28,11 +28,11 @@
 
                         <h3 class="course-block-title  not-watched">
 
-                            <a href="{{ action('CoursesController@show', [$course->slug]) }}" title="{{ $course->title }}">{{ $course->title }}</a>
+                            <a href="{{ action('CoursesController@show', [$course->course_slug]) }}" title="{{ $course->course_title }}">{{ $course->course_title }}</a>
                         </h3>
 
                         <small class="course-block-length">
-                            <span class="label label-info label-as-badge">{{ $course->present()->coursesCount }}</span>
+                            <span class="label label-info label-as-badge">{{ $course->present()->courseLessonsCount }}</span>
                         </small>
                     </div>
 

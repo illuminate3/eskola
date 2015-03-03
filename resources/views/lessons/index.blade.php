@@ -11,13 +11,14 @@
                         @foreach($lessons as $lesson)
                             <article>
                                 <h2>
-                                    <a href="{{ action('LessonsController@show', [$lesson->slug]) }}"> {{ $lesson->title }}</a>
+                                    <a href="{{ action('LessonsController@show', [$lesson->lesson_slug]) }}"> {{ $lesson->lesson_title }}</a>  <div class="body">{{ $lesson->course->course_title }}</div>
                                 </h2>
-                                <div class="body">{!! $lesson->body !!}</div>
+
+                                <div class="body">{!! $lesson->lesson_body !!}</div>
                                 <div class="body">{{ $lesson->course_id }}</div>
-                                <div class="body">{{ $lesson->excerpt }}</div>
-                                <div class="body">{{ $lesson->slug }}</div>
-                                <div class="body">{{ $lesson->id }}</div>
+                                <div class="body">{{ $lesson->lesson_excerpt }}</div>
+                                <div class="body">{{ $lesson->lesson_slug }}</div>
+                                <div class="body">{{ $lesson->lesson_id }}</div>
 
                             </article>
                             </hr>

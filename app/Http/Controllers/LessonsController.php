@@ -19,8 +19,7 @@ class LessonsController extends Controller {
 	 */
 	public function index()
 	{
-		$lessons = Lesson::latest('published_at')->published()->get();
-		//return view('lessons.index')->with('Lessons', $Lessons); =
+		$lessons = Lesson::with('course')->get();
 		return view('lessons.index', compact('lessons'));
 	}
 
@@ -31,7 +30,7 @@ class LessonsController extends Controller {
 	 */
 	public function create()
 	{
-		$courses = Course::lists('title', 'id');
+		$courses = Course::lists('course_title', 'id');
 
 		return view('lessons.create', compact('courses'));
 	}
@@ -51,15 +50,14 @@ class LessonsController extends Controller {
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param $slug
+	 * @param $lesson_slug
 	 * @return Response
 	 * @internal param int $id
 	 */
-	public function show($slug)
+	public function show($course_slug, $lesson_slug)
 	{
-		$lesson = Lesson::where('slug', $slug)->first();
-        $course = Course::findOrFail($lesson->course_id);
-		return view('lessons.show', compact('lesson', 'course'));
+		$lesson = Lesson::with('course')->where('lesson_slug', $lesson_slug)->first();
+		return view('lessons.show', compact('lesson'));
 	}
 
 	/**
@@ -71,7 +69,7 @@ class LessonsController extends Controller {
 	public function edit($id)
 	{
 		$lesson = Lesson::findOrFail($id);
-		$courses = Course::lists('title', 'id');
+		$courses = Course::lists('course_title', 'id');
 		return view('lessons.edit', compact('lesson', 'courses'));
 	}
 
@@ -104,7 +102,7 @@ class LessonsController extends Controller {
 	{
 		$test = Lesson::find(1)->test;
 		$lesson = Lesson::find(1);
-		return 'this is lesson with ID of'. $lesson->id . '  and this is that test title:' .$test->title;
+		return 'this is lesson with ID of'. $lesson->id . '  and this is that test title:' .$test->test_title;
 	}
 
 }

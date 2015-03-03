@@ -13,34 +13,34 @@ class Course extends Model implements SluggableInterface {
 	use SluggableTrait, PresentableTrait;
 
 	protected $sluggable = array(
-		'build_from' => 'title',
-		'save_to'    => 'slug',
+		'build_from' => 'course_title',
+		'save_to'    => 'course_slug',
 	);
 
 	protected $presenter = 'App\Presenters\CoursePresenter';
 
 	protected $fillable = [
-		'title',
-		'body',
-		'published_at',
-		'slug',
-		'excerpt'
+		'course_title',
+		'course_body',
+		'course_published_at',
+		'course_slug',
+		'course_excerpt'
 	];
-	protected $dates = ['published_at'];
+	protected $dates = ['course_published_at'];
 
 	public function scopePublished($query)
 	{
-		$query->where('published_at', '<=', Carbon::now());
+		$query->where('course_published_at', '<=', Carbon::now());
 	}
 
 	public function setPublishedAtAttribute($date)
 	{
-		$this->attributes['published_at'] = Carbon::parse($date);
+		$this->attributes['course_published_at'] = Carbon::parse($date);
 	}
 
-	public function setSlugAttribute($slug)
+	public function setSlugAttribute($course_slug)
 	{
-		$this->attributes['slug'] = Str::slug($slug);
+		$this->attributes['course_slug'] = Str::slug($course_slug);
 	}
 
 	public function lessons()

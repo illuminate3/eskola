@@ -455,7 +455,9 @@ padding: 3em 0;
     font-size: larger;
     text-align: justify;
 }
-
+body > div.banner-lessons.banner__series > div > div > div > p {
+    color: #ffffff;
+}
 
 /* Animations */
 

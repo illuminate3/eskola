@@ -14,12 +14,12 @@ class Test extends Model implements SluggableInterface {
     use SluggableTrait;
 
     protected $sluggable = array(
-        'build_from' => 'title',
-        'save_to'    => 'slug',
+        'build_from' => 'test_title',
+        'save_to'    => 'test_slug',
         'unique'     => true,
     );
 
-    protected $fillable = ['title', 'body', 'slug', 'published_at'];
+    protected $fillable = ['test_title', 'test_body', 'test_slug', 'test_published_at'];
 
     public function lesson()
     {

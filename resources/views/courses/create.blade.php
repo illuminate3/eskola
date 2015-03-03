@@ -13,21 +13,21 @@
 
                         {!! Form::open(['url' => 'courses']) !!}
                             <div class="form-group">
-                                {!! Form::label('title', 'Title:*') !!}
-                                {!! Form::text('title', null, ['class' => 'form-control']) !!}
+                                {!! Form::label('course_title', 'Title:*') !!}
+                                {!! Form::text('course_title', null, ['class' => 'form-control']) !!}
                             </div>
                             <div class="form-group">
-                                {!! Form::label('excerpt', 'Short description:') !!}
-                                {!! Form::text('excerpt', null, ['class' => 'form-control']) !!}
+                                {!! Form::label('course_excerpt', 'Short description:') !!}
+                                {!! Form::text('course_excerpt', null, ['class' => 'form-control']) !!}
                             </div>
                             {{--<!--- Body Form Inout Field --->--}}
                             {{--<div class="form-group">--}}
-                                {{--{!! Form::label('body', 'Description:') !!}--}}
-                                {{--{!! Form::textarea('body', null, ['class' => 'form-control']) !!}--}}
+                                {{--{!! Form::label('course_body', 'Description:') !!}--}}
+                                {{--{!! Form::textarea('course_body', null, ['class' => 'form-control']) !!}--}}
                             {{--</div>--}}
                             <!--- Published_at Form Input HIDDEN--->
                             <div class="form-group">
-                                {!! Form::input('date', 'published_at', date('Y-m-d'), ['class' => 'form-control']) !!}
+                                {!! Form::input('date', 'course_published_at', date('Y-m-d'), ['class' => 'form-control']) !!}
                             </div>
                             <!--- Submit Course Field --->
                             <div class="form-group">

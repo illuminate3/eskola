@@ -11,24 +11,24 @@
 
                     <div class="panel-body">
 
-                        {!! Form::model($course, ['method' => 'PATCH', 'action' => ['CoursesController@update', $course->id]]) !!}
+                        {!! Form::model($course, ['method' => 'PATCH', 'action' => ['CoursesController@update', $course->course_id]]) !!}
                         <div class="form-group">
-                            {!! Form::label('title', 'Title:') !!}
-                            {!! Form::text('title', null, ['class' => 'form-control']) !!}
+                            {!! Form::label('course_title', 'Title:') !!}
+                            {!! Form::text('course_title', null, ['class' => 'form-control']) !!}
                         </div>
                         <!--- Slug Form Input--->
                         <div class="form-group">
-                            {!! Form::label('slug', 'URL:') !!}
-                            {!! Form::text('slug', null, ['class' => 'form-control']) !!}
+                            {!! Form::label('course_slug', 'URL:') !!}
+                            {!! Form::text('course_slug', null, ['class' => 'form-control']) !!}
                         </div>
                         <!--- Body Form Inout Field --->
                         <div class="form-group">
-                            {!! Form::label('body', 'Description:') !!}
-                            {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
+                            {!! Form::label('course_body', 'Description:') !!}
+                            {!! Form::textarea('course_body', null, ['class' => 'form-control']) !!}
                         </div>
                         <!--- Published_at Form Input HIDDEN--->
                         <div class="form-group">
-                            {!! Form::input('date', 'published_at', date('Y-m-d'), ['class' => 'form-control']) !!}
+                            {!! Form::input('date', 'course_published_at', date('Y-m-d'), ['class' => 'form-control']) !!}
                         </div>
                         <!--- Submit Course Field --->
                         <div class="form-group">

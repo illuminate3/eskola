@@ -17,23 +17,27 @@
                             {!! Form::label('Course', 'Course:*') !!}
                             {!! Form::select('course_id', $courses, null, ['class' => 'form-control']) !!}
                         </div>
+                        <!--- Lesson Order Form Inout Field --->
+                                {!! Form::hidden('lesson_order', null, ['class' => 'form-control']) !!}
+                          <!--- Lesson Title Form Inout Field --->
                             <div class="form-group">
-                                {!! Form::label('title', 'Lesson title:*') !!}
-                                {!! Form::text('title', null, ['class' => 'form-control']) !!}
+                                {!! Form::label('lesson_title', 'Lesson title:*') !!}
+                                {!! Form::text('lesson_title', null, ['class' => 'form-control']) !!}
                             </div>
+
                             <!--- Excerpt Form Inout Field --->
                             <div class="form-group">
-                                {!! Form::label('body', 'Small description:') !!}
-                                {!! Form::text('excerpt', null, ['class' => 'form-control']) !!}
+                                {!! Form::label('lesson_body', 'Small description:') !!}
+                                {!! Form::text('lesson_excerpt', null, ['class' => 'form-control']) !!}
                             </div>
                             <!--- Body Form Inout Field --->
                             <div class="form-group">
-                                {!! Form::label('body', 'Lesson:*') !!}
-                                {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
+                                {!! Form::label('lesson_body', 'Lesson:*') !!}
+                                {!! Form::textarea('lesson_body', null, ['class' => 'form-control']) !!}
                             </div>
                             <!--- Published_at Form Input HIDDEN--->
                             <div class="form-group">
-                                {!! Form::input('date', 'published_at', date('Y-m-d'), ['class' => 'form-control']) !!}
+                                {!! Form::input('date', 'lesson_published_at', date('Y-m-d'), ['class' => 'form-control']) !!}
                             </div>
                             <!--- Submit Course Field --->
                             <div class="form-group">

@@ -24,10 +24,9 @@ class CoursesController extends Controller {
 	 */
 	public function index()
 	{
-		$courses = Course::latest('published_at')->published()->get();
-		$user = Auth::user();
+		$courses = Course::with('lessons')->published()->get();
 		//return view('courses.index')->with('courses', $courses); =
-		return view('courses.index', compact('courses', 'user'));
+		return view('courses.index', compact('courses'));
 	}
 
 	/**
@@ -58,13 +57,13 @@ class CoursesController extends Controller {
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param $slug
+	 * @param $course_slug
 	 * @return Response
 	 * @internal param int $id
 	 */
-	public function show($slug)
+	public function show($course_slug)
 	{
-		$course = Course::where('slug', $slug)->first();
+		$course = Course::with('lessons')->where('course_slug', $course_slug)->first();
 
 		return view('courses.show', compact('course'));
 	}
@@ -93,8 +92,8 @@ class CoursesController extends Controller {
 		$course = Course::findOrFail($id);
 
 		$course->update($request->all());
-		flash()->success('"' . $course->title . '" has been edited successfully!');
-		return redirect( action('CoursesController@show', [$course->slug]) );
+		flash()->success('"' . $course->course_title . '" has been edited successfully!');
+		return redirect( action('CoursesController@show', [$course->course_slug]) );
 	}
 
 	/**

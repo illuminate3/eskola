@@ -23,7 +23,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
 	protected $sluggable = array(
 		'build_from' => ['name', 'surename'],
-		'save_to'    => 'slug',
+		'save_to'    => 'user_slug',
 		'separator'  => '.',
 		'unique'     => true,
 	);
@@ -46,7 +46,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'email', 'password', 'slug', 'phone','surename'];
+	protected $fillable = ['name', 'email', 'password', 'user_slug', 'phone','surename'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.

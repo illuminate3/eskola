@@ -26,16 +26,6 @@ class CoursePresenter extends Presenter {
     }
 
     /**
-     * @return string
-     */
-    public function lessonsCount()
-    {
-        $count = $this->entity->lessons()->count();
-        $plural = str_plural('Lesson', $count);
-        return "{$count} {$plural}";
-    }
-
-    /**
      * Returns created_at in different format
      *
      * @return string
@@ -45,5 +35,12 @@ class CoursePresenter extends Presenter {
         return $this->created_at->toFormattedDateString();
     }
 
+    public function courseLessonsCount()
+    {
+        $count = $this->lessons->where('course_id', $this->id)->count();
+        $plural = str_plural('Lesson', $count);
+        return "{$count} {$plural}";
+    }
 
 }
+//      return $course->lessons->where('course_id', $course->id)->count();

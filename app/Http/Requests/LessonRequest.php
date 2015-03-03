@@ -22,10 +22,10 @@ class LessonRequest extends Request {
 	public function rules()
 	{
 		return [
-			'title' => 'required|min:3',
-			'body' => 'required|min:3',
+			'lesson_title' => 'required|min:3',
+			'lesson_body' => 'required|min:3',
 			'course_id' => 'required|exists:courses,id',
-			'published_at' => 'required|date'
+			'lesson_published_at' => 'required|date'
 		];
 	}
 

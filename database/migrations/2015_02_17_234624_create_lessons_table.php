@@ -16,13 +16,13 @@ class CreateLessonsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('course_id')->unsigned();
-			$table->string('title');
-			$table->string('slug')->unique();
-			$table->text('body')->nullable();
-			$table->text('excerpt')->nullable();
+			$table->string('lesson_title')->index();
+			$table->string('lesson_slug')->unique();
+			$table->text('lesson_body')->nullable();
+			$table->text('lesson_excerpt')->nullable();
 			$table->timestamps();
-			$table->timestamp('published_at')->nullable();
-			$table->tinyInteger('order')->nullable();
+			$table->timestamp('lesson_published_at')->nullable();
+			$table->tinyInteger('lesson_order')->nullable();
 
 			$table->foreign('course_id')
 				->references('id')

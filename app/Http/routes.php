@@ -1,20 +1,25 @@
 <?php
-
-
+Event::listen('illuminate.query', function($query)
+{
+var_dump($query);
+});
 
 Route::get('dashboard', 'PagesController@dashboard');
 
- Route::get('courses', 'CoursesController@index');
- Route::get('/', 'CoursesController@index');
+Route::get('courses', 'CoursesController@index');
 
- Route::get('courses/create', [
+Route::get('/', 'CoursesController@index');
+
+Route::get('course/{course_slug}/lessons', 'CoursesController@show');
+
+Route::get('courses/create', [
      'as' => 'course.create',
      'uses' => 'CoursesController@create'
  ]);
- Route::get('courses/{slug}', 'CoursesController@show');
+
 Route::post('courses', 'CoursesController@store');
-Route::get('courses/{id}/edit', 'CoursesController@edit');
-Route::patch('courses/{is}/update', 'CoursesController@update');
+Route::get('courses/{course_id}/edit', 'CoursesController@edit');
+Route::patch('courses/{course_id}/update', 'CoursesController@update');
 
 Route::get('lessons', 'LessonsController@index');
 Route::get('lessons/create', 'LessonsController@create');
@@ -36,3 +41,24 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+Route::get('course/{course_slug}/lesson/{lesson_slug}', ['as' => 'course.lesson.show', 'uses' => 'LessonsController@show']);
+
+
+//
+//    //Returns lesson
+//Route::get('course/{course_slug}/lesson/{lesson_slug}', function($course_slug, $lesson_slug)
+//{
+//    $lesson = \App\Lesson::with('course')->whereLessonSlug($lesson_slug)->first();
+//    $course = \App\Course::find($lesson->course_id);
+//   return view('lessons.show', compact('lesson', 'course'));
+//
+//});
+
+
+    //Returns all lessons for specific course!
+Route::get('1', function()
+{
+    $course = \App\Course::find(2);
+
+    return $course->test;
+});
