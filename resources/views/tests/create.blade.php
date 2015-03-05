@@ -11,35 +11,35 @@
 
                     <div class="panel-body">
 
-                        {!! Form::open(['url' => 'lessons']) !!}
+                        {!! Form::open(['url' => 'tests']) !!}
                         <!--- Course Form Input --->
                         <div class="form-group">
-                            {!! Form::label('Course', 'Course:*') !!}
-                            {!! Form::select('course_id', $courses, null, ['class' => 'form-control']) !!}
+                            {!! Form::label('Lesson', 'Lesson:*') !!}
+                            <select class="form-control" name="lesson_id">
+                                @foreach($lessons as $lesson)
+                                    <option value="{{ $lesson->id }}">{{ $lesson->course->course_title }} &raquo; {{ $lesson->lesson_order }} {{ $lesson->lesson_title }}</option>
+                                @endforeach
+                            </select>
                         </div>
-                            <div class="form-group">
-                                {!! Form::label('title', 'Lesson title:*') !!}
-                                {!! Form::text('title', null, ['class' => 'form-control']) !!}
-                            </div>
-                            <!--- Excerpt Form Inout Field --->
-                            <div class="form-group">
-                                {!! Form::label('body', 'Small description:') !!}
-                                {!! Form::text('excerpt', null, ['class' => 'form-control']) !!}
-                            </div>
-                            <!--- Body Form Inout Field --->
-                            <div class="form-group">
-                                {!! Form::label('body', 'Lesson:*') !!}
-                                {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
-                            </div>
-                            <!--- Published_at Form Input HIDDEN--->
-                            <div class="form-group">
-                                {!! Form::input('date', 'published_at', date('Y-m-d'), ['class' => 'form-control']) !!}
-                            </div>
-                            <!--- Submit Course Field --->
-                            <div class="form-group">
-                                {!! Form::submit('Add new lesson to this course', ['class' => 'btn btn-primary']) !!}
-                            </div>
-                            {!! Form::close() !!}
+                        <!--- Lesson Title Form Inout Field --->
+                        <div class="form-group">
+                            {!! Form::label('test_title', 'Test title:*') !!}
+                            {!! Form::text('test_title', null, ['class' => 'form-control']) !!}
+                        </div>
+                        <!--- Body Form Inout Field --->
+                        <div class="form-group">
+                            {!! Form::label('test_body', 'Lesson:*') !!}
+                            {!! Form::textarea('test_body', null, ['class' => 'form-control', 'id' => 'test-body-field']) !!}
+                        </div>
+                        <!--- Published_at Form Input HIDDEN--->
+                        <div class="form-group">
+                            {!! Form::input('date', 'test_published_at', date('Y-m-d'), ['class' => 'form-control']) !!}
+                        </div>
+                        <!--- Submit Course Field --->
+                        <div class="form-group">
+                            {!! Form::submit('Add new test to this lesson', ['class' => 'btn btn-primary']) !!}
+                        </div>
+                        {!! Form::close() !!}
                         @include('errors.list')
                     </div>
                 </div>

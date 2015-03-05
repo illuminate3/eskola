@@ -26,6 +26,11 @@
                             {!! Form::label('lesson_slug', 'URL:') !!}
                             {!! Form::text('lesson_slug', null, ['class' => 'form-control']) !!}
                         </div>
+                        <!--- Lesson Order Form Input--->
+                        <div class="form-group">
+                            {!! Form::label('lesson_order', 'Lesson order:') !!}
+                            {!! Form::text('lesson_order', null, ['class' => 'form-control']) !!}
+                        </div>
                         <!--- Body Form Inout Field --->
                         <div class="form-group">
                             {!! Form::label('lesson_body', 'Description:') !!}

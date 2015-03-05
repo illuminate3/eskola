@@ -19,11 +19,16 @@ class Test extends Model implements SluggableInterface {
         'unique'     => true,
     );
 
-    protected $fillable = ['test_title', 'test_body', 'test_slug', 'test_published_at'];
+    protected $fillable = ['test_title', 'test_body', 'test_slug', 'lesson_id', 'test_published_at'];
 
     public function lesson()
     {
         return $this->belongsTo('App\Lesson');
+    }
+
+    public function course()
+    {
+        return $this->belongsTo('App\Course');
     }
 
 }

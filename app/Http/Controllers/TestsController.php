@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Lesson;
 use App\Test;
-
+use App\Http\Requests\TestRequest;
 
 class TestsController extends Controller {
 
@@ -16,11 +16,9 @@ class TestsController extends Controller {
 	 */
 	public function index()
 	{
-		$lesson = Lesson::all();
-
-		$tests = Test::all();
+        $tests = Test::with('lesson')->get();
 		//return view('tests.index')->with('Tests', $Tests); =
-		return view('tests.index', compact('tests', 'lesson'));
+		return view('tests.index', compact('tests'));
 	}
 
 	/**
@@ -28,20 +26,24 @@ class TestsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
-	{
-		//
-	}
+    public function create()
+    {
+        $lessons = Lesson::with('course')->get();
+
+        return view('tests.create', compact('lessons'));
+    }
 
 	/**
 	 * Store a newly created resource in storage.
 	 *
 	 * @return Response
 	 */
-	public function store()
-	{
-		//
-	}
+    public function store(TestRequest $request)
+    {
+        Test::create($request->all());
+        flash()->success('Your test has been created!');
+        return redirect('tests');
+    }
 
 	/**
 	 * Display the specified resource.
@@ -49,12 +51,11 @@ class TestsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
-	{
-		$course = Test::with('lessons', 'tests')->where('id', $id)->first();
-
-		return view('tests.show', compact('course'));
-	}
+    public function show($lesson_slug, $id)
+    {
+        $test = $tests = Test::with('lesson')->where('id', $id)->first();
+        return view('tests.show', compact('test'));
+    }
 
 	/**
 	 * Show the form for editing the specified resource.
@@ -62,21 +63,26 @@ class TestsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
-	{
-		//
-	}
+    public function edit($id)
+    {
+        $test = Test::findOrFail($id);
+        $lessons = Lesson::lists('lesson_title', 'id');
+        return view('tests.edit', compact('test', 'lessons'));
+    }
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function update($id, TestRequest $request)
+    {
+        $test = Test::findOrFail($id);
+        $test->update($request->all());
+
+        return redirect('tests');
+    }
 
 	/**
 	 * Remove the specified resource from storage.

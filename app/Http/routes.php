@@ -29,11 +29,11 @@ Route::get('lessons/{id}/edit', 'LessonsController@edit');
 Route::patch('lessons/{id}/update', 'LessonsController@update');
 
 Route::get('tests', 'TestsController@index');
-Route::get('tests/create', 'TestsController@create');
-Route::get('tests/{id}', 'TestsController@show');
+Route::get('test/create', 'TestsController@create');
+Route::get('course/lesson/{lesson_slug}/test/{id}', ['as' => 'course.lesson.test.show', 'uses' => 'TestsController@show']);
 Route::post('tests', 'TestsController@store');
-Route::get('tests/{id}/edit', 'TestsController@edit');
-Route::patch('tests/{id}/update', 'TestsController@update');
+Route::get('test/{id}/edit', 'TestsController@edit');
+Route::patch('test/{id}/update', 'TestsController@update');
 
 Route::get('tes', 'LessonsController@showLessonTest');
 

@@ -6,38 +6,38 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h1>Edit: {!! $lesson->title !!}</h1>
+                        <h1>Edit: {!! $test->test_title !!}</h1>
                     </div>
 
                     <div class="panel-body">
 
-                        {!! Form::model($lesson, ['method' => 'PATCH', 'action' => ['LessonsController@update', $lesson->id]]) !!}
+                        {!! Form::model($test, ['method' => 'PATCH', 'action' => ['TestsController@update', $test->id]]) !!}
                         <!--- Course Form Input --->
                         <div class="form-group">
-                            {!! Form::label('Course', 'Course:') !!}
-                            {!! Form::select('course_id', $courses, null, ['class' => 'form-control']) !!}
+                            {!! Form::label('test', 'Lesson:') !!}
+                            {!! Form::select('lesson_id', $lessons, null, ['class' => 'form-control']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('title', 'Title:') !!}
-                            {!! Form::text('title', null, ['class' => 'form-control']) !!}
+                            {!! Form::text('test_title', null, ['class' => 'form-control']) !!}
                         </div>
                         <!--- Slug Form Input--->
                         <div class="form-group">
-                            {!! Form::label('slug', 'URL:') !!}
-                            {!! Form::text('slug', null, ['class' => 'form-control']) !!}
+                            {!! Form::label('test_slug', 'URL:') !!}
+                            {!! Form::text('test_slug', null, ['class' => 'form-control']) !!}
                         </div>
                         <!--- Body Form Inout Field --->
                         <div class="form-group">
-                            {!! Form::label('body', 'Description:') !!}
-                            {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
+                            {!! Form::label('test_body', 'Description:') !!}
+                            {!! Form::textarea('test_body', null, ['class' => 'form-control', 'id' => 'test-body-field']) !!}
                         </div>
                         <!--- Published_at Form Input HIDDEN--->
                         <div class="form-group">
-                            {!! Form::input('date', 'published_at', date('Y-m-d'), ['class' => 'form-control']) !!}
+                            {!! Form::input('date', 'test_published_at', date('Y-m-d'), ['class' => 'form-control']) !!}
                         </div>
                         <!--- Submit Course Field --->
                         <div class="form-group">
-                            {!! Form::submit('Edit course information', ['class' => 'btn btn-primary']) !!}
+                            {!! Form::submit('Update test', ['class' => 'btn btn-primary']) !!}
                         </div>
                         {!! Form::close() !!}
                         @include('errors.list')
