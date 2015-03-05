@@ -6,16 +6,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>GuP Online E-Skola</title>
 
-	<link href="/css/app.css" rel="stylesheet">
-	<link href="/css/custom.css" rel="stylesheet">
+	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/custom.css') }}" rel="stylesheet">
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- include libraries(jQuery, bootstrap, fontawesome) -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-    <link href="js/build/Squire-UI.css" rel="stylesheet" type="text/css">
-
-    <script src="js/build/squire-raw.js" type="text/javascript"></script>
-    <script src="js/build/Squire-UI.js" type="text/javascript"></script>
+    <!-- include summernote css/js-->
+    <link href="{{ asset('vendor/summernote-develop/dist/summernote.css') }}" rel="stylesheet">
+    <script src="{{ asset('vendor/summernote-develop/dist/summernote.min.js') }}"></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -84,10 +86,9 @@
 	@include('flash::message')
 
 	@yield('content')
-
+    <div id="summernote">Hello Summernote</div>
 	<!-- Scripts -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
 	<script>
 		$(function () {
 			$('[data-toggle="tooltip"]').tooltip()
@@ -100,10 +101,9 @@
     })
 </script>
 <script>
-    $(document).ready(function () {
-        UI = new SquireUI({replace: 'textarea#foo', height: 300});
+    $('#test-body-field').summernote({
+        height:400
     });
 </script>
-
 </body>
 </html>
