@@ -6,14 +6,14 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h1>{{ $lesson->title }}</h1>
+                        <h1>{{ $test->test_title }}</h1>
                     </div>
 
                     <div class="panel-body">
                         <article>
-                            <div class="body">{{ $lesson->body }}</div>
-                            <div class="body">{{ $lesson->test->title }}</div>
-                            <div class="body">{{ $lesson->test->body }}</div>
+                            <div class="body">{{ $test->test_body }}</div>
+                            <div class="body">{{ $test->test_title }}</div>
+                            <div class="body">{{ $test->test_body }}</div>
                         </article>
                     </div>
                 </div>

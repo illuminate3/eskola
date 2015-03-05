@@ -51,9 +51,9 @@ class TestsController extends Controller {
 	 */
 	public function show($id)
 	{
-		$lesson = Lesson::where('id', $id)->first();
-		$tests = Test::all();
-		return view('tests.show', compact('lesson', 'tests'));
+		$course = Test::with('lessons', 'tests')->where('id', $id)->first();
+
+		return view('tests.show', compact('course'));
 	}
 
 	/**
