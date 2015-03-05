@@ -2,43 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d20b7bd6-fba1-4ca2-810f-b59a571ecb6b" name="Default" comment="Added Tests CRUD options, now can add test to lesson, edit test, and update test!">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Requests/TestRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/Demo.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/build/Squire-UI.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/build/Squire-UI.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/build/document.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/build/font-awesome/1YwB1sO8YE1Lyjf12WNiUA.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/build/font-awesome/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/build/jQuery/jQuery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/build/squire-raw.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/build/squire.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/source/Constants.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/source/Editor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/source/Node.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/source/Range.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/source/TreeWalker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/source/document.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/source/intro.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/source/outro.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/Squire-master/squire.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Test.php" afterPath="$PROJECT_DIR$/app/Test.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TestsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TestsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tests/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/tests/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/lessons/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/lessons/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tests/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/tests/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tests/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/tests/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tests/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/tests/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="eskola.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -98,8 +62,8 @@
       <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/tests/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4725537" vertical-offset="0" max-vertical-offset="838">
-              <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.45107397" vertical-offset="0" max-vertical-offset="838">
+              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -215,7 +179,6 @@
         <option value="$PROJECT_DIR$/resources/views/lessons/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Lesson.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_02_18_230909_create_tests_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/tests/show.blade.php" />
         <option value="$PROJECT_DIR$/app/Test.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/TestRequest.php" />
@@ -224,6 +187,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/TestsController.php" />
         <option value="$PROJECT_DIR$/resources/views/tests/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tests/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/tests/show.blade.php" />
       </list>
     </option>
   </component>
@@ -1120,8 +1084,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/tests/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4725537" vertical-offset="0" max-vertical-offset="838">
-          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.45107397" vertical-offset="0" max-vertical-offset="838">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
           <folding />
         </state>
       </provider>
