@@ -57,5 +57,9 @@ class Lesson extends Model implements SluggableInterface {
 		return $this->hasOne('App\Test');
 	}
 
+    public function answers()
+    {
+        return $this->hasMany('App\Answer');
+    }
 
 }

@@ -34,7 +34,7 @@
                         <!--- Body Form Inout Field --->
                         <div class="form-group">
                             {!! Form::label('lesson_body', 'Description:') !!}
-                            {!! Form::textarea('lesson_body', null, ['class' => 'form-control']) !!}
+                            {!! Form::textarea('lesson_body', null, ['class' => 'form-control', 'id' => 'test-body-field']) !!}
                         </div>
                         <!--- Published_at Form Input HIDDEN--->
                         <div class="form-group">

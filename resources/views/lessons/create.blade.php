@@ -27,13 +27,13 @@
 
                             <!--- Excerpt Form Inout Field --->
                             <div class="form-group">
-                                {!! Form::label('lesson_body', 'Small description:') !!}
+                                {!! Form::label('lesson_excerpt', 'Small description:') !!}
                                 {!! Form::text('lesson_excerpt', null, ['class' => 'form-control']) !!}
                             </div>
                             <!--- Body Form Inout Field --->
                             <div class="form-group">
                                 {!! Form::label('lesson_body', 'Lesson:*') !!}
-                                {!! Form::textarea('lesson_body', null, ['class' => 'form-control']) !!}
+                                {!! Form::textarea('lesson_body', null, ['class' => 'form-control', 'id' => 'test-body-field']) !!}
                             </div>
                             <!--- Published_at Form Input HIDDEN--->
                             <div class="form-group">

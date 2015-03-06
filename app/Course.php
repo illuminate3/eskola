@@ -57,4 +57,9 @@ class Course extends Model implements SluggableInterface {
 		return $this->hasManyThrough('App\Test', 'App\Lesson');
 	}
 
+    public function answers()
+    {
+        return $this->hasMany('App\Answer');
+    }
+
 }

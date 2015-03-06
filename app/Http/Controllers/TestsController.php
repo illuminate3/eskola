@@ -53,7 +53,7 @@ class TestsController extends Controller {
 	 */
     public function show($lesson_slug, $id)
     {
-        $test = $tests = Test::with('lesson')->where('id', $id)->first();
+        $test = Test::with('lesson')->where('id', $id)->first();
         return view('tests.show', compact('test'));
     }
 

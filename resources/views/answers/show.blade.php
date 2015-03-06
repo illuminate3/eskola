@@ -31,10 +31,12 @@
 
                             <td class="lesson-title">
                                {!! link_to_route('course.lesson.show', $lesson->lesson_title, [$lesson->course->course_slug, $lesson->lesson_slug], $attributes = array('class' => 'strike')) !!}
+
+
                             </td>
 
                             <td class="lesson-length">
-                                {!! link_to_route('course.lesson.test.show', $lesson->test->test_title, [$lesson->lesson_slug, $lesson->test->id], $attributes = array('class' => 'strike')) !!}
+                                {{ $lesson->lesson_excerpt }}
                             </td>
                             <td class="lesson-status">
                                 <span href="#" class="fa fa-lock" data-toggle="tooltip" data-placement="top" title="Get access to this course">

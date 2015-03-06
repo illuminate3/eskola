@@ -31,4 +31,9 @@ class Test extends Model implements SluggableInterface {
         return $this->belongsTo('App\Course');
     }
 
+    public function answers()
+    {
+        return $this->hasMany('App\Answer');
+    }
+
 }

@@ -86,7 +86,6 @@
 	@include('flash::message')
 
 	@yield('content')
-    <div id="summernote">Hello Summernote</div>
 	<!-- Scripts -->
 
 	<script>
